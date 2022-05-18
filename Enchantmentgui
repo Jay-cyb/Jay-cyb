@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("MM's Enchantment gui", "Ocean")
+
+local UniversalTab = Window:NewTab("Change Species")
+local PlayerSection = UniversalTab:NewSection("Species")
+
+PlayerSection:NewToggle("Become a siren", "Makes you a siren", function(state)
+    if state then
+        local targetPlayer = game.Players.LocalPlayer.Name
+local targetTeam = "Sirens"
+
+if game:GetService("Players"):FindFirstChild(targetPlayer) ~= nil and game:GetService("Teams"):FindFirstChild(targetTeam) ~= nil then
+game:GetService("Players")[targetPlayer].TeamColor = game:GetService("Teams")[targetTeam].TeamColor
+end
+else
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+end
+end)
+
+PlayerSection:NewToggle("Become a Nymph", "Makes you a nymph", function(state)
+    if state then
+        local targetPlayer = game.Players.LocalPlayer.Name
+local targetTeam = "Nymphs"
+
+if game:GetService("Players"):FindFirstChild(targetPlayer) ~= nil and game:GetService("Teams"):FindFirstChild(targetTeam) ~= nil then
+game:GetService("Players")[targetPlayer].TeamColor = game:GetService("Teams")[targetTeam].TeamColor
+end
+else
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+end
+end)
+
+PlayerSection:NewToggle("Become a Human", "Makes you a human", function(state)
+    if state then
+        local targetPlayer = game.Players.LocalPlayer.Name
+local targetTeam = "Humans"
+
+if game:GetService("Players"):FindFirstChild(targetPlayer) ~= nil and game:GetService("Teams"):FindFirstChild(targetTeam) ~= nil then
+game:GetService("Players")[targetPlayer].TeamColor = game:GetService("Teams")[targetTeam].TeamColor
+end
+else
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+end
+end)
