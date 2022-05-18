@@ -2,6 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("MM's NewTvdgameig gui", "Ocean")
 
 local UniversalTab = Window:NewTab("Magic-Player")
+local ItemsTab = Window:NewTab("Items")
+local GetItemsSection = ItemsTab:NewSection("Get Items")
 local PlayerSection = UniversalTab:NewSection("Player")
 local MagicSection = UniversalTab:NewSection("Magic")
 
@@ -30,3 +32,15 @@ game:GetService("ReplicatedStorage").Events.Abilities:FireServer(unpack(args))
     end
     end)
     MagicSection:NewLabel("Please spam click the button to get more magic")
+    
+PlayerSection:NewToggle("Gain more health", "Gives you more health", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 999999
+wait(0.2)
+game.Player.LocalPlayer.Character.Humanoid.Health = 999999
+        else
+            game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+        end
+    end)
+    PlayerSection:NewLabel("The increase health isn't finished yet.")
+    
