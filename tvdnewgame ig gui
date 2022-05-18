@@ -1,0 +1,22 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("MM's NewTvdgameig gui", "Ocean")
+
+local UniversalTab = Window:NewTab("Universal")
+local UniversalSection = UniversalTab:NewSection("Character")
+
+UniversalSection:NewSlider("Speed", "Changes your speed", 500, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+UniversalSection:NewSlider("Jump Power", "Changes your jump power", 500, 16, function(jp)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = jp
+end)
+
+UniversalSection:NewToggle("Channel candles", "Toggles channel", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
+    else
+        game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+    end
+end)
+
